@@ -27,9 +27,12 @@ extension UITableView {
         self.register(UINib(nibName: cellType.nameOfClass, bundle: Bundle(for: cellType.self)), forCellReuseIdentifier: cellType.nameOfClass)
     }
 
-    func registerNib(_ cellType: String) {
-        self.register(UINib(nibName: cellType, bundle: Bundle(path: cellType) ), forCellReuseIdentifier: cellType)
+    func registerNib(_ cellType: String, bundle: Bundle? = nil) {
+        self.register(UINib(nibName: cellType,
+                            bundle: bundle == nil ? Bundle(path: cellType) : bundle),
+                      forCellReuseIdentifier: cellType)
     }
+    
 }
 
 extension UICollectionView {
