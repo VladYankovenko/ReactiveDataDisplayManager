@@ -45,7 +45,7 @@ public class BaseCellGenerator<Cell: Configurable>: TableCellGenerator, Selectab
     public func registerCell(in tableView: UITableView) {
         switch registerType {
         case .nib:
-            tableView.registerNib(identifier, bundle: Cell.bundle)
+            tableView.registerNib(identifier, bundle: Cell.bundle())
         case .class:
             tableView.register(Cell.self, forCellReuseIdentifier: identifier)
         }

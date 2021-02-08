@@ -13,7 +13,7 @@ public protocol Configurable where Self: UIView {
 
     associatedtype Model
 
-    static var bundle: Bundle? { get set }
+    static func bundle() -> Bundle?
 
     func configure(with model: Model)
     
