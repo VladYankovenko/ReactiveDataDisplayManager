@@ -13,8 +13,17 @@ public protocol Configurable where Self: UIView {
 
     associatedtype Model
 
+    /// Method for support SPM
+    /// If you use SPM, return Bundle.module in your cell
     static func bundle() -> Bundle?
 
     func configure(with model: Model)
     
+}
+
+public extension Configurable {
+
+    static func bundle() -> Bundle? {
+        return nil
+    }
 }
